@@ -55,7 +55,6 @@ const UserRepos = ({
             easing="ease"
             staggerDurationBy={50}
             className="row"
-            name="bouncy"
           >
             {userRepos.map(({ id, ...otherProps }) => {
               return <ReposCard key={id} {...otherProps} />;

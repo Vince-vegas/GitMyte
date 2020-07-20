@@ -1,0 +1,219 @@
+.user-repos {
+  padding: 50px 0;
+
+  .page-title {
+    margin-bottom: 35px;
+    h1 {
+      font-size: 25px;
+      padding: 0;
+    }
+  }
+}
+
+.sort-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+
+  span {
+    margin-right: 15px;
+    font-size: 16px;
+  }
+
+  .slc-btn {
+    font-size: 15px;
+    padding: 8px;
+    min-width: 110px;
+    background: transparent;
+    color: #4b2cff;
+    border: 1px solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-out;
+
+    span {
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: rgb(0, 118, 255);
+      color: #fff;
+    }
+
+    &:hover .chevron-d {
+      fill: #fff;
+    }
+  }
+}
+
+.slc-btn-toggle {
+  background-color: rgb(0, 118, 255) !important;
+  color: #fff !important;
+
+  .chevron-d {
+    fill: #fff;
+  }
+}
+
+.sort-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 110px;
+  z-index: 1;
+  border: 1px solid rgb(67, 155, 255);
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease-out;
+
+  .sort-list {
+    .sort-link {
+      padding: 8px;
+      width: 100%;
+      text-align: left;
+      background-color: rgb(0, 118, 255);
+      color: #fff;
+      font-size: 15px;
+
+      &:hover {
+        background-color: rgb(67, 155, 255);
+      }
+    }
+  }
+}
+
+// toggle sort menu
+.sort-toggle {
+  opacity: 1;
+  visibility: visible;
+}
+//
+
+.rotate-up {
+  transform: rotate(180deg);
+}
+
+.repos-card {
+  box-shadow: 1px 1px 6px 2px #e0e4e7;
+  margin-bottom: 30px;
+  display: block;
+  color: rgb(52, 73, 94);
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  border-radius: 3px;
+
+  &:hover {
+    box-shadow: 2px 2px 6px 4px #e0e4e7;
+  }
+
+  .name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d1c1d;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-top: auto;
+
+    span {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// ICONS STYLE FOR USER REPOS
+
+.lang-box {
+  margin-right: 20px;
+
+  .html {
+    background-color: #e34c26;
+  }
+
+  .css {
+    background-color: #563d7c;
+  }
+
+  .php {
+    background-color: #4f5d95;
+  }
+
+  .c {
+    background-color: #1d1c1d;
+  }
+
+  .cplus {
+    background-color: #f34b7d;
+  }
+
+  .go {
+    background-color: #00add8;
+  }
+
+  .javascript {
+    background-color: #f0d965;
+  }
+
+  .java {
+    background-color: #b07219;
+  }
+
+  .typescript {
+    background-color: #2b7489;
+  }
+
+  .python {
+    background-color: #3572a5;
+  }
+
+  .shell {
+    background-color: #89e051;
+  }
+
+  .swift {
+    background-color: #ffac45;
+  }
+}
+
+.lang-item {
+  background-color: blue;
+  border-radius: 50px;
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+}
+
+.repos-icon {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  fill: rgb(0, 0, 0);
+  user-select: none;
+  vertical-align: top;
+  pointer-events: none;
+}
+.book {
+  vertical-align: baseline;
+}
+
+.chevron-d {
+  fill: #4b2cff;
+}

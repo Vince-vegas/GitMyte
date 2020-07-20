@@ -1,0 +1,106 @@
+// Item will be RELATIVE to all chidren element ***
+.relative {
+  position: relative;
+}
+
+.block {
+  display: block !important;
+}
+
+// Background White ***
+.bg-white {
+  background: $pure-white;
+}
+
+// Font Text White ***
+.text-white {
+  color: $pure-white;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+// Text align Center ***
+.text-center {
+  text-align: center;
+}
+
+// MARGINS ************************
+
+.mr-0 {
+  margin: 0;
+}
+
+// PADDING ************************
+
+.pd-0 {
+  padding: 0;
+}
+
+// FONT-WEIGHT ********************
+
+.fw200 {
+  font-weight: 200;
+}
+
+.fw400 {
+  font-weight: 400;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+.fw700 {
+  font-weight: 700;
+}
+
+// *******************************************
+
+.center {
+  @include margin($left: auto, $right: auto);
+}
+
+// Margins Bottom ****
+.mt-auto {
+  @include margin($top: auto);
+}
+
+.mb5 {
+  @include margin($bottom: 5px);
+}
+.mb10 {
+  @include margin($bottom: 10px);
+}
+.mb15 {
+  @include margin($bottom: 15px);
+}
+.mb20 {
+  @include margin($bottom: 20px);
+}
+.mb25 {
+  @include margin($bottom: 25px);
+}
+.mb30 {
+  @include margin($bottom: 30px);
+}
+.mb35 {
+  @include margin($bottom: 35px);
+}
+.mb40 {
+  @include margin($bottom: 40px);
+}
+.mb45 {
+  @include margin($bottom: 45px);
+}
+.mb50 {
+  @include margin($bottom: 50px);
+}
+
+.mb80 {
+  @include margin($bottom: 80px);
+}

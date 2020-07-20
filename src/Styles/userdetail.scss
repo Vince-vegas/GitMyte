@@ -1,0 +1,116 @@
+.user-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 2px;
+}
+
+.user-detail {
+  padding: 50px 15px;
+  min-height: 490px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(245, 250, 255);
+
+  .user-image {
+    border: 5px solid #4b2cff;
+    min-height: 170px;
+    min-width: 170px;
+    max-width: 170px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+
+  .name {
+    font-size: 38px;
+    font-weight: 700;
+    padding-bottom: 25px;
+  }
+
+  .url-name {
+    font-size: 27px;
+    padding-bottom: 5px;
+
+    a {
+      text-decoration: underline;
+      color: #4b2cff;
+    }
+  }
+
+  .basic-info {
+    display: flex;
+    padding-bottom: 25px;
+
+    p {
+      font-size: 20px;
+      margin: 0 20px;
+    }
+  }
+}
+
+.user-rates {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .rate-item {
+    min-width: 140px;
+    padding: 12px 5px;
+    margin-right: 10px;
+    color: #fff;
+    border-radius: 3px;
+
+    h4 {
+      font-size: 24px;
+      padding: 0;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 18px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .repo-item {
+    background-color: #34495e;
+  }
+
+  .followers-item {
+    background-color: #dc3545;
+  }
+
+  .following-item {
+    background-color: #28a745;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .user-detail {
+    .basic-info {
+      flex-direction: column;
+
+      p:first-child {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .user-rates {
+    .rate-item {
+      min-width: 120px;
+      margin: 5px;
+
+      h4 {
+        font-size: 18px;
+      }
+    }
+  }
+}

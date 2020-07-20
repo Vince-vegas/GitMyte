@@ -5,7 +5,7 @@ import ForkCountIcon from '../Icons/ForkCountIcon';
 import Language from '../Languages/Language';
 
 // User Repositories
-// Has to be a class for FlipMove Standard Component
+// Has to be a class component for FlipMove Standard Component
 
 class ReposCard extends React.Component {
   render() {
@@ -34,12 +34,12 @@ class ReposCard extends React.Component {
           <div className="status">
             <Language language={language} />
             <span>
-              <StarIcon /> {stargazers_count}
+              <StarIcon /> {stargazers_count.toLocaleString()}
             </span>
             <span>
-              <ForkCountIcon /> {forks_count}
+              <ForkCountIcon /> {forks_count.toLocaleString()}
             </span>
-            <span>{size} KB</span>
+            <span>{size.toLocaleString()} KB</span>
           </div>
         </a>
       </li>

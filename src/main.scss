@@ -6,10 +6,7 @@
 // 1. reset
 @import './sass/1-reset/normalize.scss';
 
-// 2. Base
-@import './sass/2-base/class-helpers.scss';
-
-// 3. layout
+// 2. layout
 @import './sass/3-layout/responsive.scss';
 
 body {
@@ -36,44 +33,6 @@ body {
 
 %pointer-event-none {
   pointer-events: none;
-}
-
-.github-icon {
-  height: 68px;
-  width: 68px;
-  fill: $fresh-blue;
-  margin-bottom: 8px;
-}
-
-.main-page {
-  background-color: #1b242f;
-  height: 100vh;
-
-  .page-content {
-    color: #fff;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -40%);
-    text-align: center;
-    min-width: 440px;
-
-    h1 {
-      font-size: 40px;
-    }
-  }
-}
-
-.hm-search {
-  margin-top: 20px;
-
-  .search-input {
-    padding: 15px 10px;
-    font-size: 22px;
-    border-radius: 3px;
-    color: #222;
-    text-align: center;
-  }
 }
 
 .spinner {

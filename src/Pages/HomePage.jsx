@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchInput from '../Components/SearchInput/SearchInput';
 import GithubIcon from '../Components/Icons/GithubIcon';
+import '../Styles/homepage.scss';
 
 const Home = () => (
   <div className="main-page">

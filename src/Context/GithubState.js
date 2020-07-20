@@ -31,6 +31,7 @@ const GithubProvider = (props) => {
   };
 
   // onSubmitSearch
+  // set also a query to a router by search inputs value
   const onSubmitSearch = (e) => {
     e.preventDefault();
 
@@ -67,18 +68,19 @@ const GithubProvider = (props) => {
   };
 
   // Fetch Github user repo
+  // sort by stars: DEFAULT
+
   const getUserRepo = async (username) => {
     const userRepo = await axios(
       `https://api.github.com/users/${username}/repos?per_page=8&sort=updated`
     );
     const repoData = await userRepo.data;
 
-    // to sort by stars: DEFAULT
-    // const sortData = repoData
-    //   .slice()
-    //   .sort((a, b) => b.stargazers_count - a.stargazers_count);
+    const sortData = repoData
+      .slice()
+      .sort((a, b) => b.stargazers_count - a.stargazers_count);
 
-    dispatch({ type: 'set-user-repos', repos: repoData });
+    dispatch({ type: 'set-user-repos', repos: sortData });
   };
 
   // For sorting Repos

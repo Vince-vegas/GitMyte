@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useContext, useEffect, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import Followers from '../../Card/RatedCard/Followers';
 import Following from '../../Card/RatedCard/Following';
 import Repos from '../../Card/RatedCard/Repos';
@@ -7,27 +7,11 @@ import '../../../Styles/userdetail.scss';
 import WorkInfo from '../basic-info/WorkInfo';
 import LocationInfo from '../basic-info/LocationInfo';
 import JoinedInfo from '../basic-info/JoinedInfo';
-import { withRouter } from 'react-router-dom';
-import { GithubContext } from '../../../Context/GithubState';
 import Spinner from '../../Spinner/Spinner';
 
 // User Details && User Status
 
-const UserDetail = (props) => {
-  const githubContext = useContext(GithubContext);
-  const { userDetail, getUserDetail, dispatch, isLoading } = githubContext;
-
-  useEffect(() => {
-    const queryStr = new URLSearchParams(props.location.search);
-    const getName = queryStr.get('name');
-
-    getUserDetail(getName);
-
-    return () => {
-      dispatch({ type: 'user-info-empty' });
-    };
-  }, []);
-
+const UserDetail = ({ userDetails, isLoading }) => {
   const {
     name,
     avatar_url,
@@ -39,7 +23,7 @@ const UserDetail = (props) => {
     public_repos,
     company,
     location,
-  } = userDetail;
+  } = userDetails;
 
   return (
     <div className="user-detail">
@@ -84,4 +68,4 @@ const UserDetail = (props) => {
   );
 };
 
-export default withRouter(UserDetail);
+export default UserDetail;

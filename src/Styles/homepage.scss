@@ -1,0 +1,37 @@
+.github-icon {
+  height: 68px;
+  width: 68px;
+  fill: rgb(25, 181, 254);
+  margin-bottom: 8px;
+}
+
+.main-page {
+  background-color: #1b242f;
+  height: 100vh;
+
+  .page-content {
+    color: #fff;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    text-align: center;
+    min-width: 440px;
+
+    h1 {
+      font-size: 40px;
+    }
+  }
+}
+
+.hm-search {
+  margin-top: 20px;
+
+  .search-input {
+    padding: 15px 10px;
+    font-size: 22px;
+    border-radius: 3px;
+    color: #222;
+    text-align: center;
+  }
+}

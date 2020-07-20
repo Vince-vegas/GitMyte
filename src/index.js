@@ -6,10 +6,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 require('dotenv').config();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 );

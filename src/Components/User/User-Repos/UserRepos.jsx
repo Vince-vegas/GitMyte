@@ -1,37 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import '../../../Styles/user-repos.scss';
 import ReposCard from '../../Card/ReposCard';
-import { withRouter } from 'react-router-dom';
-import { GithubContext } from '../../../Context/GithubState';
 import ChevronD from '../../Icons/ChevronD';
 import FlipMove from 'react-flip-move';
 
 // User Repositories or User Projects
 
-const UserRepos = (props) => {
-  const githubContext = useContext(GithubContext);
-  const {
-    userRepos,
-    getUserRepo,
-    dispatch,
-    showSelection,
-    sortByStars,
-    sortByForks,
-    sortBySize,
-  } = githubContext;
-
-  useEffect(() => {
-    const queryStr = new URLSearchParams(props.location.search);
-    const name = queryStr.get('name');
-
-    getUserRepo(name);
-
-    return () => {
-      dispatch({ type: 'set-user-repos', repos: [] });
-    };
-  }, []);
-
+const UserRepos = ({
+  showSelection,
+  sortByForks,
+  sortBySize,
+  sortByStars,
+  userRepos,
+}) => {
   return (
     <div className="user-repos">
       <div className="lg-container">
@@ -65,14 +47,24 @@ const UserRepos = (props) => {
             </div>
           </div>
         </div>
-        <div className="row">
-          {userRepos.map(({ id, ...otherProps }) => {
-            return <ReposCard key={id} {...otherProps} />;
-          })}
+        <div>
+          <FlipMove
+            typeName="ul"
+            duration={500}
+            delay={100}
+            easing="ease"
+            staggerDurationBy={50}
+            className="row"
+            name="bouncy"
+          >
+            {userRepos.map(({ id, ...otherProps }) => {
+              return <ReposCard key={id} {...otherProps} />;
+            })}
+          </FlipMove>
         </div>
       </div>
     </div>
   );
 };
 
-export default withRouter(UserRepos);
+export default UserRepos;

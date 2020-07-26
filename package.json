@@ -36,11 +36,8 @@
     ]
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
     "axios": "^0.19.2",
     "immer": "^6.0.5",
-    "intersection-observer": "^0.10.0",
-    "react-slick": "^0.26.1",
     "use-immer": "^0.4.0"
   }
 }

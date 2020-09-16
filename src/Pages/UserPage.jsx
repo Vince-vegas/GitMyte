@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext } from 'react';
+import UserChartRecords from '../Components/Charts/UserChartRecords';
 import UserDetail from '../Components/User/User-Detail/UserDetail';
 import UserRepos from '../Components/User/User-Repos/UserRepos';
 import { GithubContext } from '../Context/GithubState';
@@ -11,12 +12,15 @@ const UserPage = (props) => {
     getUserDetail,
     dispatch,
     isLoading,
-    userRepos,
+    selectedRepos,
     getUserRepo,
     showSelection,
     sortByStars,
     sortByForks,
     sortBySize,
+    onShowMore,
+    isShowMore,
+    sortedBy,
   } = githubContext;
 
   useEffect(() => {
@@ -37,12 +41,16 @@ const UserPage = (props) => {
   return (
     <React.Fragment>
       <UserDetail userDetails={userDetail} isLoading={isLoading} />
+      {/* <UserChartRecords /> */}
       <UserRepos
         showSelection={showSelection}
         sortByForks={sortByForks}
         sortByStars={sortByStars}
         sortBySize={sortBySize}
-        userRepos={userRepos}
+        selectedRepos={selectedRepos}
+        onShowMore={onShowMore}
+        isShowMore={isShowMore}
+        sortedBy={sortedBy}
       />
     </React.Fragment>
   );

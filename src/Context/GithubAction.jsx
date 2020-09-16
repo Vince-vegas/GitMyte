@@ -1,9 +1,13 @@
 export const initialState = {
   searchInput: '',
   searchResults: [],
+  noSearchResults: false,
   userDetail: {},
   userRepos: [],
+  selectedRepos: [],
   isLoading: false,
+  isShowMore: false,
+  sortedBy: 'stars',
 };
 
 const GithubAction = (draft, action) => {
@@ -21,6 +25,13 @@ const GithubAction = (draft, action) => {
     case 'search-user': {
       draft.searchResults = action.searchResults;
       draft.isLoading = false;
+      draft.noSearchResults = false;
+      return;
+    }
+
+    case 'no-search-results': {
+      draft.noSearchResults = true;
+      draft.isLoading = false;
       return;
     }
 
@@ -32,13 +43,28 @@ const GithubAction = (draft, action) => {
 
     case 'set-user-repos': {
       draft.userRepos = action.repos;
+      draft.sortedBy = action.sortedBy;
+      return;
+    }
+
+    case 'show-more-repos': {
+      draft.isShowMore = action.isShowMore;
+      return;
+    }
+
+    case 'set-selected-repos': {
+      draft.selectedRepos = action.selectedRepos;
       return;
     }
 
     case 'user-info-empty': {
       draft.userDetail = {};
       draft.userRepos = [];
+      draft.selectedRepos = [];
       draft.isLoading = false;
+      draft.isShowMore = false;
+      draft.sortedBy = 'stars';
+      draft.noSearchResults = false;
       return;
     }
 

@@ -172,41 +172,6 @@
     flex-basis: 100%;
     max-width: 100%;
   }
-
-  // FLEXBOX FOR LAYOUT
-  // .align-sm-start {
-  //   -ms-flex-align: start;
-  //   align-items: flex-start;
-  // }
-
-  // .align-sm-end {
-  //   -ms-flex-align: end;
-  //   align-items: flex-end;
-  // }
-
-  // .justify-sm-around {
-  //   -ms-flex-pack: distribute;
-  //   justify-content: space-around;
-  // }
-
-  // .justify-sm-between {
-  //   -ms-flex-pack: justify;
-  //   justify-content: space-between;
-  // }
-
-  // .justify-sm-start {
-  //   -ms-flex-pack: start;
-  //   justify-content: flex-start;
-  // }
-
-  // .justify-sm-center {
-  //   @include justify-content(center);
-  // }
-
-  // .justify-sm-end {
-  //   -ms-flex-pack: end;
-  //   justify-content: flex-end;
-  // }
 }
 
 @media (min-width: 768px) {
@@ -262,41 +227,6 @@
     flex-basis: 100%;
     max-width: 100%;
   }
-
-  // FLEXBOX FOR LAYOUT
-  //   .align-md-start {
-  //     -ms-flex-align: start;
-  //     align-items: flex-start;
-  //   }
-
-  //   .align-md-end {
-  //     -ms-flex-align: end;
-  //     align-items: flex-end;
-  //   }
-
-  //   .justify-md-around {
-  //     -ms-flex-pack: distribute;
-  //     justify-content: space-around;
-  //   }
-
-  //   .justify-md-between {
-  //     -ms-flex-pack: justify;
-  //     justify-content: space-between;
-  //   }
-
-  //   .justify-md-start {
-  //     -ms-flex-pack: start;
-  //     justify-content: flex-start;
-  //   }
-
-  //   .justify-md-center {
-  //     @include justify-content(center);
-  //   }
-
-  //   .justify-md-end {
-  //     -ms-flex-pack: end;
-  //     justify-content: flex-end;
-  //   }
 }
 
 @media (min-width: 992px) {
@@ -352,45 +282,6 @@
     flex-basis: 100%;
     max-width: 100%;
   }
-
-  // FLEXBOX FOR LAYOUT
-  //   .align-lg-start {
-  //     -ms-flex-align: start;
-  //     align-items: flex-start;
-  //   }
-
-  //   .align-lg-center {
-  //     @include align-items(center);
-  //   }
-
-  //   .align-lg-end {
-  //     -ms-flex-align: end;
-  //     align-items: flex-end;
-  //   }
-
-  //   .justify-lg-around {
-  //     -ms-flex-pack: distribute;
-  //     justify-content: space-around;
-  //   }
-
-  //   .justify-lg-between {
-  //     -ms-flex-pack: justify;
-  //     justify-content: space-between;
-  //   }
-
-  //   .justify-lg-start {
-  //     -ms-flex-pack: start;
-  //     justify-content: flex-start;
-  //   }
-
-  //   .justify-lg-center {
-  //     @include justify-content(center);
-  //   }
-
-  //   .justify-lg-end {
-  //     -ms-flex-pack: end;
-  //     justify-content: flex-end;
-  //   }
 }
 
 @media (min-width: 1200px) {

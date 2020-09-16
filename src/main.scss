@@ -21,11 +21,6 @@ body {
   background: $royal-blue;
 }
 
-// .btn {
-//   letter-spacing: 1.5px;
-//   @include btn();
-// }
-
 %user-select-none {
   cursor: pointer;
   user-select: none;

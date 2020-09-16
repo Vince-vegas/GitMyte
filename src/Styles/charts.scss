@@ -1,0 +1,26 @@
+.mn-charts {
+  padding: 50px 0 20px;
+
+  .chart-holder {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 0 8px 0 rgba(0, 0, 0, 0.01),
+      4px 16px 32px 0 rgba(0, 48, 111, 0.16);
+    padding: 20px 0;
+    border-radius: 2px;
+    user-select: none;
+
+    .chartpie {
+      margin-right: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mn-charts {
+    .chart-holder {
+      .chartpie {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchInput from '../Components/SearchInput/SearchInput';
+import SearchInput from '../Components/Search/SearchInput';
 import GithubIcon from '../Components/Icons/GithubIcon';
 import '../Styles/homepage.scss';
 

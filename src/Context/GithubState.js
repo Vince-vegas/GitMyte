@@ -1,9 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable array-callback-return */
 import React, { createContext } from 'react';
 import { useImmerReducer } from 'use-immer';
 import GithubAction, { initialState } from './GithubAction';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+import UserRepos from '../Components/User/User-Repos/UserRepos';
+import { useEffect } from 'react';
 
 // Context
 export const GithubContext = createContext();
@@ -13,9 +16,13 @@ const GithubProvider = (props) => {
   const {
     searchInput,
     searchResults,
+    noSearchResults,
     userDetail,
     userRepos,
     isLoading,
+    selectedRepos,
+    isShowMore,
+    sortedBy,
   } = state;
 
   // For search input
@@ -53,7 +60,11 @@ const GithubProvider = (props) => {
       if (index <= 11) return item;
     });
 
-    dispatch({ type: 'search-user', searchResults: minimumData });
+    if (minimumData.length > 0) {
+      dispatch({ type: 'search-user', searchResults: minimumData });
+    } else {
+      dispatch({ type: 'no-search-results' });
+    }
 
     return data;
   };
@@ -72,71 +83,78 @@ const GithubProvider = (props) => {
 
   const getUserRepo = async (username) => {
     const userRepo = await axios(
-      `https://api.github.com/users/${username}/repos?per_page=8&sort=updated`
+      `https://api.github.com/users/${username}/repos?per_page=12&sort=updated`
     );
     const repoData = await userRepo.data;
 
-    const sortData = repoData
-      .slice()
-      .sort((a, b) => b.stargazers_count - a.stargazers_count);
-
-    dispatch({ type: 'set-user-repos', repos: sortData });
+    dispatch({ type: 'set-user-repos', repos: repoData, sortedBy: 'stars' });
+    dispatch({
+      type: 'set-selected-repos',
+      selectedRepos: repoData.slice(0, 8),
+    });
   };
 
-  // For sorting Repos
-  const showSelection = (e) => {
-    e.target.classList.toggle('slc-btn-toggle');
-    e.target.lastElementChild.classList.toggle('rotate-up');
-    e.target.parentElement.lastElementChild.classList.toggle('sort-toggle');
+  // show more repos: ture || false
+  const onShowMore = () => {
+    dispatch({ type: 'show-more-repos', isShowMore: !isShowMore });
   };
-
-  // hide the Sorted Selection menu
-  const hideSelection = (e) => {
-    const text = e.target.innerText;
-
-    const { previousSibling } = e.target.offsetParent;
-
-    previousSibling.firstElementChild.innerText = text;
-    previousSibling.classList.remove('slc-btn-toggle');
-    previousSibling.lastElementChild.classList.remove('rotate-up');
-    e.target.offsetParent.classList.remove('sort-toggle');
-  };
-  // ==================
 
   // SORT BY: stars, forks, sizes
-  const sortByStars = (e) => {
-    hideSelection(e);
-
+  const sortByStars = () => {
     const sortData = userRepos
       .slice()
       .sort((a, b) => b.stargazers_count - a.stargazers_count);
 
-    dispatch({ type: 'set-user-repos', repos: sortData });
+    dispatch({ type: 'set-user-repos', repos: sortData, sortedBy: 'stars' });
+
     return sortData;
   };
 
-  const sortByForks = (e) => {
-    hideSelection(e);
+  const sortByForks = () => {
     const sortData = userRepos.slice().sort((a, b) => b.forks - a.forks);
-    dispatch({ type: 'set-user-repos', repos: sortData });
+
+    dispatch({ type: 'set-user-repos', repos: sortData, sortedBy: 'forks' });
+
     return sortData;
   };
 
-  const sortBySize = (e) => {
-    hideSelection(e);
+  const sortBySize = () => {
     const sortData = userRepos.slice().sort((a, b) => b.size - a.size);
-    dispatch({ type: 'set-user-repos', repos: sortData });
+
+    dispatch({ type: 'set-user-repos', repos: sortData, sortedBy: 'size' });
+
     return sortData;
   };
+
+  //
+
+  useEffect(() => {
+    if (isShowMore) {
+      dispatch({
+        type: 'set-selected-repos',
+        selectedRepos: userRepos.slice(0, userRepos.length),
+      });
+    } else {
+      dispatch({
+        type: 'set-selected-repos',
+        selectedRepos: userRepos.slice(0, 8),
+      });
+    }
+  }, [sortedBy, isShowMore]);
 
   return (
     <GithubContext.Provider
       value={{
         searchInput,
         searchResults,
+        noSearchResults,
         userDetail,
         userRepos,
         isLoading,
+        selectedRepos,
+        isShowMore,
+        sortedBy,
+        onShowMore,
         onHandleKey,
         dispatch,
         handleInput,
@@ -144,8 +162,6 @@ const GithubProvider = (props) => {
         onSearchUsers,
         getUserDetail,
         getUserRepo,
-        showSelection,
-        hideSelection,
         sortByStars,
         sortByForks,
         sortBySize,

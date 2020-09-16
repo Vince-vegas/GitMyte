@@ -41,7 +41,7 @@ const UserPage = (props) => {
   return (
     <React.Fragment>
       <UserDetail userDetails={userDetail} isLoading={isLoading} />
-      {/* <UserChartRecords /> */}
+      <UserChartRecords />
       <UserRepos
         showSelection={showSelection}
         sortByForks={sortByForks}

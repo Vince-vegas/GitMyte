@@ -2,14 +2,40 @@
   padding: 50px 0 20px;
 
   .chart-holder {
+    position: relative;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 0 8px 0 rgba(0, 0, 0, 0.01),
       4px 16px 32px 0 rgba(0, 48, 111, 0.16);
-    padding: 20px 0;
+    padding: 25px 30px;
     border-radius: 2px;
     user-select: none;
+    min-height: 320px;
+
+    h1 {
+      margin-bottom: 25px;
+      text-align: center;
+      color: #333;
+      font-weight: bold;
+    }
 
     .chartpie {
       margin-right: 60px;
+    }
+  }
+}
+
+.chart-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1200px) {
+  .mn-charts {
+    .chart-holder {
+      .chartpie {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -18,9 +44,16 @@
   .mn-charts {
     .chart-holder {
       .chartpie {
-        margin-right: 0;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mn-charts {
+    .lg-container {
+      padding: 0;
     }
   }
 }

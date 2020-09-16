@@ -64,13 +64,14 @@ const GithubAction = (draft, action) => {
       draft.isLoading = false;
       draft.isShowMore = false;
       draft.sortedBy = 'stars';
-      draft.noSearchResults = false;
+
       return;
     }
 
     case 'search-result-empty': {
       draft.searchResults = [];
       draft.isLoading = false;
+      draft.noSearchResults = false;
       return;
     }
 

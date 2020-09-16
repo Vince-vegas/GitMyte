@@ -10,13 +10,8 @@ import UserPage from './Pages/UserPage';
 import NavBar from './Components/Navigation/NavBar';
 
 /*
- * Developers
- * If you notice that I'm wrapping all pages/components in one Provider(because it only have 3 pages)
- * GithubProvider
- * even thought you scale the States, the provider will handle a large of states
- * I use Immer Libray, it is the most rewarding data structures library on React to handle a large of states
- * it makes web applications perform to the highest.
- */
+ To read code start from /Pages
+*/
 
 const App = () => {
   return (

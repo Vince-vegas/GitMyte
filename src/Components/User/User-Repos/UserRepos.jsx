@@ -92,7 +92,7 @@ const UserRepos = ({
               })}
           </FlipMove>
 
-          {selectedRepos && (
+          {selectedRepos.length > 0 && (
             <button className="more-btn" onClick={onShowMore}>
               {isShowMore ? 'Show Less' : 'Show More'}
             </button>

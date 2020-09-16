@@ -17,7 +17,7 @@ const SearchInput = () => {
         <input
           className="search-input"
           type="text"
-          placeholder="eg. kentcdodds"
+          placeholder="eg. cassidoo"
           value={searchInput}
           onChange={handleInput}
           onKeyPress={onHandleKey}

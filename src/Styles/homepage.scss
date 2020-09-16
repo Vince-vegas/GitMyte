@@ -29,9 +29,37 @@
 
   .search-input {
     padding: 15px 10px;
-    font-size: 22px;
+    font-size: 25px;
     border-radius: 3px;
     color: #222;
     text-align: center;
+    letter-spacing: 3.5px;
+
+    &::placeholder {
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-page {
+    .page-content {
+      min-width: 310px;
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .hm-search {
+    .search-input {
+      font-size: 18px;
+      letter-spacing: 2px;
+
+      &::placeholder {
+        font-size: 18px;
+      }
+    }
   }
 }

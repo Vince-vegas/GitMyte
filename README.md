@@ -11,13 +11,13 @@ Built with:
 
 ## Run the Project:
 
-1. Install the Now CLI
+1. Install dependencies
 
    ```bash
    npm install
    ```
 
-2. Deploy!
+2. Run the server!
 
    ```bash
    npm start

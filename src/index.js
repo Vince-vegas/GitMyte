@@ -11,9 +11,3 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 );
-
-// fetch(`https://api.github.com/users/kentcdodds`)
-//   .then((res) => res.json())
-//   .then((data) => {
-//     console.log(data);
-//   });

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { Pie, Bar } from 'react-chartjs-2';
 import GhPolyglot from 'gh-polyglot';
@@ -6,8 +7,43 @@ import { withRouter } from 'react-router-dom';
 import { useRef } from 'react';
 import ChartLoading from './ChartLoading';
 
+const pieOpt = {
+  legend: { position: 'right' },
+  responsive: true,
+  maintainAspectRatio: true,
+};
+
 const UserChartRecords = (props) => {
-  const [repoStar, setRepoStar] = useState({});
+  const [repoStar, setRepoStar] = useState({
+    datasets: [
+      {
+        data: [1000, 300, 500, 700, 400, 100, 150, 500, 230],
+        label: 'Github Repo',
+        backgroundColor: [
+          '#e74c3c',
+          '#2ecc71',
+          '#3498db',
+          '#9b59b6',
+          '#f1c40f',
+          '#34495e',
+          '#27ae60',
+          '#3498db',
+          '#bdc3c7',
+        ],
+      },
+    ],
+    labels: [
+      'Javascript',
+      'Css',
+      'REACT',
+      'HTML',
+      'SCSS',
+      'Gatsby',
+      'Js',
+      'NodeJs',
+      'MongoDB',
+    ],
+  });
   const [barChart, setBarChart] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -81,29 +117,62 @@ const UserChartRecords = (props) => {
       <section className="mn-charts">
         <div className="lg-container">
           <div className="chart-holder">
-            {isLoading && <ChartLoading />}
+            {/* {isLoading && <ChartLoading />} */}
 
             {'datasets' in repoStar && (
               <div className="row justify-center">
-                <div className="w-100 col-lg-4 col-md-6 col-sm-8 chartpie">
+                {/* <div className="w-100 col-lg-5 col-md-6 chartpie">
                   <h1>Most Used Languages</h1>
-                  <Pie
-                    data={repoStar}
-                    options={{
-                      legend: { position: 'right' },
-                      responsive: true,
-                    }}
-                  />
+                  <Pie data={repoStar} options={pieOpt} />
                 </div>
 
-                <div className="w-100 col-lg-5 col-md-6 col-sm-10">
+                <div className="w-100 col-lg-5 col-md-6 ">
                   <h1>Most Starred Repo</h1>
                   <Bar
                     data={barChart}
                     options={{ legend: { display: false }, responsive: true }}
                   />
+                </div> */}
+
+                <div
+                  style={{
+                    height: '340px',
+                    width: '460px',
+                    position: 'relative',
+                    border: '1px solid',
+                  }}
+                >
+                  <h1>Most Used Languages</h1>
+                  <Pie
+                    data={repoStar}
+                    options={pieOpt}
+                    height={180}
+                    width={400}
+                  />
+                </div>
+
+                <div
+                  style={{
+                    height: '340px',
+                    width: '460px',
+                    position: 'relative',
+                    border: '1px solid',
+                  }}
+                >
+                  <h1>Most Starred Repo</h1>
+                  <Bar
+                    data={barChart}
+                    options={{
+                      legend: { display: false },
+                      responsive: true,
+                      maintainAspectRatio: true,
+                    }}
+                    height={200}
+                    width={400}
+                  />
                 </div>
               </div>
+              //
             )}
           </div>
         </div>

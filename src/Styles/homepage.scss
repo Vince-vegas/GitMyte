@@ -7,12 +7,14 @@
 
 .main-page {
   background-color: #1b242f;
-  height: 100vh;
+  height: 95vh;
+  min-height: 700px;
+  position: relative;
 
   .page-content {
     color: #fff;
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -40%);
     text-align: center;

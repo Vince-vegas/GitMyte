@@ -5,7 +5,6 @@ import { useImmerReducer } from 'use-immer';
 import GithubAction, { initialState } from './GithubAction';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
-import UserRepos from '../Components/User/User-Repos/UserRepos';
 import { useEffect } from 'react';
 
 // Context

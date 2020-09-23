@@ -24,6 +24,7 @@ const UserPage = (props) => {
   } = githubContext;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const queryStr = new URLSearchParams(props.location.search);
     const getName = queryStr.get('name');
 

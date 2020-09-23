@@ -23,10 +23,10 @@
 
       &.pie-chart {
         margin-right: 60px;
-        width: 460px;
+        width: 370px;
       }
       &.bar-chart {
-        width: 510px;
+        width: 460px;
       }
     }
   }
@@ -39,7 +39,7 @@
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
   .mn-charts {
     .chart-holder {
       .chart-item {

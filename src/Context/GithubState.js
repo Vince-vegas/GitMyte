@@ -89,7 +89,9 @@ const GithubProvider = (props) => {
     dispatch({ type: 'set-user-repos', repos: repoData, sortedBy: 'stars' });
     dispatch({
       type: 'set-selected-repos',
-      selectedRepos: repoData.slice(0, 8),
+      selectedRepos: repoData
+        .slice(0, 8)
+        .sort((a, b) => b.stargazers_count - a.stargazers_count),
     });
   };
 

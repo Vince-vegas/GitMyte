@@ -17,6 +17,8 @@ const SearchedPage = (props) => {
   } = githubContext;
 
   useEffect(() => {
+    // scroll to top
+    window.scrollTo(0, 0);
     const queryStr = new URLSearchParams(props.location.search);
     const searchQuery = queryStr.get('q');
 

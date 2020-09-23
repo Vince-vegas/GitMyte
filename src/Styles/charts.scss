@@ -17,8 +17,17 @@
       font-weight: bold;
     }
 
-    .chartpie {
-      margin-right: 60px;
+    .chart-item {
+      height: 480px;
+      position: relative;
+
+      &.pie-chart {
+        margin-right: 60px;
+        width: 460px;
+      }
+      &.bar-chart {
+        width: 510px;
+      }
     }
   }
 }
@@ -33,8 +42,10 @@
 @media screen and (max-width: 1200px) {
   .mn-charts {
     .chart-holder {
-      .chartpie {
-        margin-right: 0;
+      .chart-item {
+        &.pie-chart {
+          margin-right: 0;
+        }
       }
     }
   }
@@ -43,8 +54,10 @@
 @media screen and (max-width: 768px) {
   .mn-charts {
     .chart-holder {
-      .chartpie {
-        margin-bottom: 40px;
+      .chart-item {
+        &.pie-chart {
+          margin-bottom: 20px;
+        }
       }
     }
   }
@@ -54,6 +67,15 @@
   .mn-charts {
     .lg-container {
       padding: 0;
+    }
+
+    .chart-holder {
+      .chart-item {
+        height: 400px;
+        &.bar-chart {
+          width: 480px;
+        }
+      }
     }
   }
 }

@@ -14,36 +14,7 @@ const pieOpt = {
 };
 
 const UserChartRecords = (props) => {
-  const [repoStar, setRepoStar] = useState({
-    datasets: [
-      {
-        data: [1000, 300, 500, 700, 400, 100, 150, 500, 230],
-        label: 'Github Repo',
-        backgroundColor: [
-          '#e74c3c',
-          '#2ecc71',
-          '#3498db',
-          '#9b59b6',
-          '#f1c40f',
-          '#34495e',
-          '#27ae60',
-          '#3498db',
-          '#bdc3c7',
-        ],
-      },
-    ],
-    labels: [
-      'Javascript',
-      'Css',
-      'REACT',
-      'HTML',
-      'SCSS',
-      'Gatsby',
-      'Js',
-      'NodeJs',
-      'MongoDB',
-    ],
-  });
+  const [repoStar, setRepoStar] = useState({});
   const [barChart, setBarChart] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -117,48 +88,21 @@ const UserChartRecords = (props) => {
       <section className="mn-charts">
         <div className="lg-container">
           <div className="chart-holder">
-            {/* {isLoading && <ChartLoading />} */}
+            {isLoading && <ChartLoading />}
 
             {'datasets' in repoStar && (
               <div className="row justify-center">
-                {/* <div className="w-100 col-lg-5 col-md-6 chartpie">
-                  <h1>Most Used Languages</h1>
-                  <Pie data={repoStar} options={pieOpt} />
-                </div>
-
-                <div className="w-100 col-lg-5 col-md-6 ">
-                  <h1>Most Starred Repo</h1>
-                  <Bar
-                    data={barChart}
-                    options={{ legend: { display: false }, responsive: true }}
-                  />
-                </div> */}
-
-                <div
-                  style={{
-                    height: '340px',
-                    width: '460px',
-                    position: 'relative',
-                    border: '1px solid',
-                  }}
-                >
+                <div className="chart-item pie-chart">
                   <h1>Most Used Languages</h1>
                   <Pie
                     data={repoStar}
                     options={pieOpt}
-                    height={180}
-                    width={400}
+                    height={200}
+                    width={200}
                   />
                 </div>
 
-                <div
-                  style={{
-                    height: '340px',
-                    width: '460px',
-                    position: 'relative',
-                    border: '1px solid',
-                  }}
-                >
+                <div className="chart-item bar-chart">
                   <h1>Most Starred Repo</h1>
                   <Bar
                     data={barChart}
@@ -167,8 +111,8 @@ const UserChartRecords = (props) => {
                       responsive: true,
                       maintainAspectRatio: true,
                     }}
-                    height={200}
-                    width={400}
+                    height={250}
+                    width={300}
                   />
                 </div>
               </div>

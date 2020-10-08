@@ -22,3 +22,5 @@ Built with:
    ```bash
    npm start
    ```
+
+## Very Soon this project will be converted to Next.JS (working on it)

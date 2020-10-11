@@ -32,6 +32,7 @@ class ReposCard extends React.Component {
           </h4>
           <p className="description">{description}</p>
           <div className="status">
+
             <Language language={language} />
             <span>
               <StarIcon /> {stargazers_count.toLocaleString()}

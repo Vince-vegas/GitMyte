@@ -13,6 +13,8 @@ import NavBar from './Components/Navigation/NavBar';
  To read code start from /Pages
 */
 
+
+
 const App = () => {
   return (
     <Fragment>
@@ -24,8 +26,16 @@ const App = () => {
           <Route exact path="/user" component={UserPage} />
         </GithubProvider>
       </Switch>
+
     </Fragment>
   );
 };
+
+
+
+
+
+
+
 
 export default App;

@@ -1,18 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import { onDetectColor } from './LangColors';
 
-// Has to make conditional statement for C++ language to has its letter name
 // Create a text of user's repo language used
-
 const Language = ({ language }) => (
   <p className="lang-box">
-    <span
-      className={`lang-item ${
-        language === 'C++' || language === null
-          ? 'cplus'
-          : language.toLowerCase()
-      }`}
-    ></span>{' '}
+    <span className="lang-item" style={{ backgroundColor: `${onDetectColor(language)}` }}></span>{' '}
     {language}
   </p>
 );

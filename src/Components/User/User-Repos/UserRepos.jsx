@@ -46,17 +46,15 @@ const UserRepos = ({
             <div className="sort-box">
               <span>Sort by:</span>
               <button
-                className={`${
-                  !showSort ? 'slc-btn' : 'slc-btn slc-btn-toggle'
-                }`}
+                className={`${!showSort ? 'slc-btn' : 'slc-btn slc-btn-toggle'
+                  }`}
                 onClick={showSortSelection}
               >
                 <span>{sortedBy}</span> <ChevronD showSort={showSort} />
               </button>
               <ul
-                className={`${
-                  !showSort ? 'sort-menu' : 'sort-menu sort-toggle'
-                }`}
+                className={`${!showSort ? 'sort-menu' : 'sort-menu sort-toggle'
+                  }`}
               >
                 <li className="sort-list">
                   <button className="sort-link" onClick={onSortStars}>
@@ -80,7 +78,7 @@ const UserRepos = ({
         <div>
           <FlipMove
             typeName="ul"
-            duration={500}
+            duration={200}
             delay={100}
             easing="ease"
             staggerDurationBy={50}

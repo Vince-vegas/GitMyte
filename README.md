@@ -23,4 +23,4 @@ Built with:
    npm start
    ```
 
-## This project will be converted to Next.JS with Styled-Components
+## This project will be converted to Next.JS with Styled-Components(Working)

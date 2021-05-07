@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 export const GithubContext = createContext();
 
 const GithubProvider = (props) => {
-  const [state, dispatch] = useImmerReducer(GithubAction, initialState);
+  const [ state, dispatch ] = useImmerReducer(GithubAction, initialState);
   const {
     searchInput,
     searchResults,
@@ -141,7 +141,7 @@ const GithubProvider = (props) => {
         selectedRepos: userRepos.slice(0, 8),
       });
     }
-  }, [sortedBy, isShowMore]);
+  }, [ sortedBy, isShowMore ]);
 
   return (
     <GithubContext.Provider

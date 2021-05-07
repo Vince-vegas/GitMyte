@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "axios": "^0.19.2",
-    "immer": "^6.0.5",
+    "immer": "^8.0.1",
     "use-immer": "^0.4.0"
   }
 }

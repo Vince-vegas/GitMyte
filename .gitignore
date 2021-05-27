@@ -10,7 +10,8 @@
 
 # production
 /build
-/src
+*/src/*
+src/*
 
 # misc
 .DS_Store
